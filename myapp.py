@@ -4,7 +4,6 @@ import pandas as pd
 import numpy as np
 import requests
 
-import matplotlib.pyplot as plt
 import plotly.express as px
 
 # Load the data
