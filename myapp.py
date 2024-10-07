@@ -30,7 +30,7 @@ st.write("")
 st.write("")
 
 
-data1=pd.read_csv(r"C:\Users\shaur\OneDrive\Desktop\cccc\mydata.csv")
+data1=pd.read_csv(r"mydata.csv")
 df1=pd.DataFrame(data1)
 df1 = df1.sort_values(by='Issued_Patents', ascending=False)
 col1,col2 = st.columns([0.55,1.45])
