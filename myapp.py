@@ -6,6 +6,7 @@ import plotly.express as px
 
 
 
+st.set_page_config(layout="wide")
 def fetch_nasa_data(api_endpoint):
     try:
         # Send a GET request to the API endpoint
