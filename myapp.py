@@ -1,0 +1,162 @@
+
+import streamlit as st
+import pandas as pd
+import requests
+import plotly.express as px
+
+
+st.set_page_config(layout="wide")
+def fetch_nasa_data(api_endpoint):
+    try:
+        # Send a GET request to the API endpoint
+        response = requests.get(api_endpoint)
+        response.raise_for_status()
+        # Parse the response data (assuming JSON)
+        return response.json()
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching data: {e}")
+        return None
+# Define the API endpoint for NASA data
+api_endpoint = "https://data.nasa.gov/resource/gquh-watm.json"
+data = fetch_nasa_data(api_endpoint)
+print(data)
+df=pd.DataFrame(data)
+
+# Streamlit App Title
+
+#st.title('NASA Patent Data Analysis')
+st.markdown("<h1 style='text-align: center; color: white; background-color: Coral; padding: 10px; border-radius: 10px;'>NASA Patent Data Analysis</h1>", unsafe_allow_html=True)
+st.write("")
+st.write("")
+
+
+data1=pd.read_csv(r"mydata.csv")
+df1=pd.DataFrame(data1)
+df1 = df1.sort_values(by='Issued_Patents', ascending=True)
+
+col1,col2 = st.columns([0.5,0.5])
+col3,col4=st.columns([0.4,0.6])
+with col1:
+ with st.container(height=210,border=True):
+  
+  fig = px.bar(df1, x='Issued_Patents', y='center',
+             labels={'center': 'Center', 'Issued_Patents': 'Number of Patents Issued'},
+             color_discrete_sequence=["Coral"])
+# Display the chart in Streamlit
+
+  fig.update_layout(title='Total Patents Issued by each Center',
+    height=170,  
+    width=500, 
+    margin=dict(l=20, r=20, t=30, b=20),
+    font=dict(size=12),
+     yaxis=dict(
+        title=dict(font=dict(size=9)),  # Font size for the y-axis title
+        tickfont=dict(size=9)           # Font size for y-axis tick labels
+    ),
+     xaxis=dict(
+        title=dict(font=dict(size=9)),  # Font size for the y-axis title
+        tickfont=dict(size=9)           # Font size for y-axis tick labels
+    )
+)
+  st.plotly_chart(fig, use_container_width=True)
+with col2:
+  df_status = pd.read_csv('output1.csv')  # Replace 'filename.csv' with the path to your file
+  with st.container(height=210,border=True):
+    fig1 = px.pie(df_status,
+    names='status',  
+    values='count',   
+    title='Patents Status', 
+    color_discrete_sequence=px.colors.sequential.RdBu  # Custom color palette
+)
+
+# Display the pie chart in Streamlit
+    fig1.update_layout(title='Total Patents Issued by each Center',
+    height=170,  
+    width=400, 
+    margin=dict(l=20, r=20, t=30, b=20),
+    font=dict(size=12)
+     )
+    st.plotly_chart(fig1)
+
+with col3:
+ with st.container(height=250,border=True):
+  df_cat = pd.read_csv('output2.csv') 
+  df_cat = df_cat.sort_values(by='count', ascending=True)
+  fig3 = px.bar(df_cat, x='count', y='Patent_Category',
+             labels={'count': 'Number of Patents', 'Patents Categories': 'Patent_Category'},
+             color_discrete_sequence=["Coral"])
+# Display the chart in Streamlit
+
+  fig3.update_layout(title='Total Patents Issued by each Center',
+    height=210,  
+    width=400, 
+    margin=dict(l=20, r=20, t=30, b=20),
+    font=dict(size=12),
+     yaxis=dict(
+        title=dict(font=dict(size=9)),  # Font size for the y-axis title
+        tickfont=dict(size=9)           # Font size for y-axis tick labels
+    ),
+     xaxis=dict(
+        title=dict(font=dict(size=9)),  # Font size for the y-axis title
+        tickfont=dict(size=9)           # Font size for y-axis tick labels
+    )
+)
+  st.plotly_chart(fig3, use_container_width=True)
+  
+
+  
+
+  
+
+st.markdown("""
+    <style>
+        [data-testid="column"]:nth-child(1){
+            background-color: #494949;
+        }
+    </style>
+""", unsafe_allow_html=True)
+with col4:
+    df_catt = pd.read_csv('output4.csv') 
+    with st.container(height=250,border=True):
+     
+     selected_cat = st.selectbox('Filter Patents by Patent Category:',df_catt['Patent_Category'])
+     filtered_dat = df_catt[df_catt['Patent_Category'] == selected_cat]
+     small_df=filtered_dat.head(5)
+     table_html = small_df.to_html(index=False)
+     styled_table_html = f"""
+        <div style="font-size: 10px; width: 350px; height: 210px; overflow: auto; border: 1px solid #ddd; padding:1px;">
+            {table_html}
+        </div>
+    """
+    
+    # Display the table
+     st.markdown(styled_table_html, unsafe_allow_html=True)
+
+
+
+
+# Show raw data
+if st.checkbox('Show Patents data'):
+      st.write("")
+      st.write("")
+      st.write(df)
+if st.checkbox('Show Summary Statistics'):
+      st.subheader('Summary Statistics')
+      st.write(df.describe())
+     
+
+# Summary statistics
+ 
+ 
+
+# Data filtering by status
+status_options = df['status'].unique()
+selected_status = st.selectbox('Filter by Patent Status:', status_options)
+filtered_data = df[df['status'] == selected_status]
+st.write(filtered_data)
+
+
+
+
+
+
