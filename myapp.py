@@ -116,16 +116,16 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-    df_catt = pd.read_csv('output4.csv') 
+df_catt = pd.read_csv('output4.csv') 
     
      
-    selected_cat = st.selectbox('Filter Patents by Patent Category:',df_catt['Patent_Category'])
-    filtered_dat = df_catt[df_catt['Patent_Category'] == selected_cat]
-    small_df=filtered_dat.head(5)
+selected_cat = st.selectbox('Filter Patents by Patent Category:',df_catt['Patent_Category'])
+filtered_dat = df_catt[df_catt['Patent_Category'] == selected_cat]
+small_df=filtered_dat.head(5)
     
     
     # Display the table
-     st.write(small_df)
+st.write(small_df)
 
 
 
