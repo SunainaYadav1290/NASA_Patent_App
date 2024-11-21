@@ -37,7 +37,7 @@ df1 = df1.sort_values(by='Issued_Patents', ascending=True)
 col1,col2,col3 = st.columns([0.3,0.3,0.3])
 
 with col1:
- with st.container(height=300,border=True):
+ with st.container(height=350,border=True):
   
   fig = px.bar(df1, x='Issued_Patents', y='center',
              labels={'center': 'Center', 'Issued_Patents': 'Number of Patents Issued'},
@@ -49,12 +49,12 @@ with col1:
     margin=dict(l=20, r=20, t=30, b=20),
     font=dict(size=12),
      yaxis=dict(
-        title=dict(font=dict(size=12)),  # Font size for the y-axis title
-        tickfont=dict(size=12)           # Font size for y-axis tick labels
+        title=dict(font=dict(size=16)),  # Font size for the y-axis title
+        tickfont=dict(size=16)           # Font size for y-axis tick labels
     ),
      xaxis=dict(
-        title=dict(font=dict(size=12)),  # Font size for the y-axis title
-        tickfont=dict(size=12)           # Font size for y-axis tick labels
+        title=dict(font=dict(size=16)),  # Font size for the y-axis title
+        tickfont=dict(size=16)           # Font size for y-axis tick labels
     )
 ) 
  
