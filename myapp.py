@@ -49,12 +49,12 @@ with col1:
     margin=dict(l=20, r=20, t=30, b=20),
     font=dict(size=22),
      yaxis=dict(
-        title=dict(font=dict(size=22)),  # Font size for the y-axis title
-        tickfont=dict(size=22)           # Font size for y-axis tick labels
+        title=dict(font=dict(size=20)),  # Font size for the y-axis title
+        tickfont=dict(size=20)           # Font size for y-axis tick labels
     ),
      xaxis=dict(
-        title=dict(font=dict(size=22)),  # Font size for the y-axis title
-        tickfont=dict(size=22)           # Font size for y-axis tick labels
+        title=dict(font=dict(size=20)),  # Font size for the y-axis title
+        tickfont=dict(size=20)           # Font size for y-axis tick labels
     )
 ) 
  
