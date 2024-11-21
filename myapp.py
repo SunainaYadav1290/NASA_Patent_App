@@ -45,7 +45,7 @@ with col1:
 # Display the chart in Streamlit
 
   fig.update_layout(title='Total Patents Issued by each Center',
-    height=170,  
+    height=260,  
     width=500, 
     margin=dict(l=20, r=20, t=30, b=20),
     font=dict(size=12),
@@ -71,7 +71,7 @@ with col2:
 
 # Display the pie chart in Streamlit
     fig1.update_layout(title='Total Patents Issued by each Center',
-    height=170,  
+    height=260,  
     width=400, 
     margin=dict(l=20, r=20, t=30, b=20),
     font=dict(size=12)
@@ -88,7 +88,7 @@ with col3:
 # Display the chart in Streamlit
 
   fig3.update_layout(title='Total Patents Issued by each Center',
-    height=210,  
+    height=260,  
     width=400, 
     margin=dict(l=20, r=20, t=30, b=20),
     font=dict(size=12),
