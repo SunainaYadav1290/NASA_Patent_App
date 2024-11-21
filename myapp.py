@@ -37,7 +37,7 @@ df1 = df1.sort_values(by='Issued_Patents', ascending=True)
 col1,col2,col3 = st.columns([0.3,0.3,0.3])
 
 with col1:
- with st.container(height=210,border=True):
+ with st.container(height=300,border=True):
   
   fig = px.bar(df1, x='Issued_Patents', y='center',
              labels={'center': 'Center', 'Issued_Patents': 'Number of Patents Issued'},
@@ -61,7 +61,7 @@ with col1:
   st.plotly_chart(fig, use_container_width=True)
 with col2:
   df_status = pd.read_csv('output1.csv')  # Replace 'filename.csv' with the path to your file
-  with st.container(height=210,border=True):
+  with st.container(height=300,border=True):
     fig1 = px.pie(df_status,
     names='status',  
     values='count',   
@@ -79,7 +79,7 @@ with col2:
     st.plotly_chart(fig1)
 
 with col3:
- with st.container(height=210,border=True):
+ with st.container(height=300,border=True):
   df_cat = pd.read_csv('output2.csv') 
   df_cat = df_cat.sort_values(by='count', ascending=True)
   fig3 = px.bar(df_cat, x='count', y='Patent_Category',
