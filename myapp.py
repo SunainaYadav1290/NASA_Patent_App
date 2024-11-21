@@ -34,8 +34,8 @@ data1=pd.read_csv(r"mydata.csv")
 df1=pd.DataFrame(data1)
 df1 = df1.sort_values(by='Issued_Patents', ascending=True)
 
-col1,col2 = st.columns([0.5,0.5])
-col3,col4=st.columns([0.4,0.6])
+col1,col2,col3 = st.columns([0.3,0.3,0.3])
+
 with col1:
  with st.container(height=210,border=True):
   
@@ -79,7 +79,7 @@ with col2:
     st.plotly_chart(fig1)
 
 with col3:
- with st.container(height=250,border=True):
+ with st.container(height=210,border=True):
   df_cat = pd.read_csv('output2.csv') 
   df_cat = df_cat.sort_values(by='count', ascending=True)
   fig3 = px.bar(df_cat, x='count', y='Patent_Category',
@@ -115,22 +115,17 @@ st.markdown("""
         }
     </style>
 """, unsafe_allow_html=True)
-with col4:
+
     df_catt = pd.read_csv('output4.csv') 
-    with st.container(height=250,border=True):
+    
      
-     selected_cat = st.selectbox('Filter Patents by Patent Category:',df_catt['Patent_Category'])
-     filtered_dat = df_catt[df_catt['Patent_Category'] == selected_cat]
-     small_df=filtered_dat.head(5)
-     table_html = small_df.to_html(index=False)
-     styled_table_html = f"""
-        <div style="font-size: 10px; width: 350px; height: 210px; overflow: auto; border: 1px solid #ddd; padding:1px;">
-            {table_html}
-        </div>
-    """
+    selected_cat = st.selectbox('Filter Patents by Patent Category:',df_catt['Patent_Category'])
+    filtered_dat = df_catt[df_catt['Patent_Category'] == selected_cat]
+    small_df=filtered_dat.head(5)
+    
     
     # Display the table
-     st.markdown(styled_table_html, unsafe_allow_html=True)
+     st.write(small_df)
 
 
 
