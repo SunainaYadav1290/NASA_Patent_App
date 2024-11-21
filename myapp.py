@@ -43,7 +43,10 @@ with col1:
              labels={'center': 'Center', 'Issued_Patents': 'Number of Patents Issued'},
              color_discrete_sequence=["Coral"])
 # Display the chart in Streamlit
-  fig.update_layout(title='Total Patents Issued by each Center',
+  fig.update_layout(title=dict(
+        text='Total Patents Issued by each Center',  # Title text
+        font=dict(size=25, color='Coral')  # Set font size and color
+    ),,
     height=360,  
     width=500, 
     margin=dict(l=20, r=20, t=30, b=20),
