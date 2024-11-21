@@ -43,7 +43,20 @@ with col1:
              labels={'center': 'Center', 'Issued_Patents': 'Number of Patents Issued'},
              color_discrete_sequence=["Coral"])
 # Display the chart in Streamlit
-
+  fig.update_layout(title='Total Patents Issued by each Center',
+    height=260,  
+    width=500, 
+    margin=dict(l=20, r=20, t=30, b=20),
+    font=dict(size=12),
+     yaxis=dict(
+        title=dict(font=dict(size=12)),  # Font size for the y-axis title
+        tickfont=dict(size=12)           # Font size for y-axis tick labels
+    ),
+     xaxis=dict(
+        title=dict(font=dict(size=12)),  # Font size for the y-axis title
+        tickfont=dict(size=12)           # Font size for y-axis tick labels
+    )
+) 
  
   st.plotly_chart(fig, use_container_width=True)
 with col2:
@@ -80,12 +93,12 @@ with col3:
     margin=dict(l=20, r=20, t=30, b=20),
     font=dict(size=12),
      yaxis=dict(
-        title=dict(font=dict(size=9)),  # Font size for the y-axis title
-        tickfont=dict(size=9)           # Font size for y-axis tick labels
+        title=dict(font=dict(size=12)),  # Font size for the y-axis title
+        tickfont=dict(size=12)           # Font size for y-axis tick labels
     ),
      xaxis=dict(
-        title=dict(font=dict(size=9)),  # Font size for the y-axis title
-        tickfont=dict(size=9)           # Font size for y-axis tick labels
+        title=dict(font=dict(size=12)),  # Font size for the y-axis title
+        tickfont=dict(size=12)           # Font size for y-axis tick labels
     )
 )
   st.plotly_chart(fig3, use_container_width=True)
