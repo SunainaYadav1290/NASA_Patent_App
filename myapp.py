@@ -47,7 +47,7 @@ with col1:
     height=360,  
     width=500, 
     margin=dict(l=20, r=20, t=30, b=20),
-    font=dict(size=22),
+    font=dict(size=25),
      yaxis=dict(
         title=dict(font=dict(size=18)),  # Font size for the y-axis title
         tickfont=dict(size=18)           # Font size for y-axis tick labels
