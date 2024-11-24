@@ -128,11 +128,11 @@ df_catt = pd.read_csv('output4.csv')
      
 selected_cat = st.selectbox('Filter Patents by Patent Category:',df_catt['Patent_Category'])
 filtered_dat = df_catt[df_catt['Patent_Category'] == selected_cat]
-small_df=filtered_dat.head(5)
+small_df=filtered_dat.head(5).to_string()
     
     
     # Display the table
-st.write(small_df.to_string())
+st.dataframe(small_df)
 
 
 
