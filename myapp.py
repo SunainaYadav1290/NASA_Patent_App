@@ -4,7 +4,7 @@ import pandas as pd
 import requests
 import plotly.express as px
 
-
+pd.options.display.max_colwidth = 100
 st.set_page_config(layout="wide")
 def fetch_nasa_data(api_endpoint):
     try:
