@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd
 import requests
 import plotly.express as px
-pd.set_option('display.max_colwidth', 500)
+
 
 st.set_page_config(layout="wide")
 def fetch_nasa_data(api_endpoint):
