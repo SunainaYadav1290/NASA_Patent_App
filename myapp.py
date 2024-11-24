@@ -94,7 +94,7 @@ with col3:
 
   fig3.update_layout(title=dict(
         text='Total Patents by Category',  # Title text
-        font=dict(size=25, color='Coral') ,
+        font=dict(size=25, color='Coral')) ,
     height=360,  
     width=400, 
     margin=dict(l=20, r=20, t=30, b=20),
