@@ -4,9 +4,7 @@ import pandas as pd
 import requests
 import plotly.express as px
 
-pd.set_option(
-    'display.max_colwidth', None
-)
+
 st.set_page_config(layout="wide")
 def fetch_nasa_data(api_endpoint):
     try:
@@ -134,7 +132,7 @@ small_df=filtered_dat.head(5)
     
     
     # Display the table
-st.dataframe(small_df)
+st.dataframe(small_df).to_string()
 
 
 
