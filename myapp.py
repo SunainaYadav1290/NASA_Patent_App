@@ -132,7 +132,7 @@ small_df=filtered_dat.head(5)
     
     
     # Display the table
-st.dataframe(small_df.to_string())
+st.write(small_df.to_string())
 
 
 
