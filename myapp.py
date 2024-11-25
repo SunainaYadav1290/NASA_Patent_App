@@ -86,13 +86,9 @@ with col2:
 with col3:
  df_cat = pd.read_csv('output2.csv') 
  df_cat = df_cat.sort_values(by='count', ascending=True)
- with st.container():
-  st.markdown("""
-        <style>
-        .stContainer {height: 400px; border: 2px solid black; padding: 10px;}
-        </style>
-        """, unsafe_allow_html=True)
-  fig3 = px.bar(df_cat, x='count', y='Patent_Category',
+ with st.container(height=400,border=True):
+  
+  fig3 = px.line(df_cat, x='count', y='Patent_Category',
              labels={'count': 'Number of Patents', 'Patents Categories': 'Patent_Category'},
              color_discrete_sequence=["Coral"])
 # Display the chart in Streamlit
