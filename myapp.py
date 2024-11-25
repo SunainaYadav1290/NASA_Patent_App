@@ -131,7 +131,7 @@ st.write('Patents Expiring in 2024:')
 
 df_exp = df[(df['status'] == 'Issued') & (df['patent_expiration_date'].dt.year == 2024)]
 
-df_html = df_exp.to_html(index=False).head
+df_html = df_exp.to_html(index=False)
 st.write(df_html, unsafe_allow_html=True)
 
 df_catt = pd.read_csv('output4.csv') 
