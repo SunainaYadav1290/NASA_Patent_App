@@ -85,7 +85,7 @@ with col2:
 
 with col3:
  with st.container(height=400,border=True):
- df_cat = pd.read_csv('output2.csv') 
+  df_cat = pd.read_csv('output2.csv') 
   df_cat = df_cat.sort_values(by='count', ascending=True)
   fig3 = px.bar(df_cat, x='count', y='Patent_Category',
              labels={'count': 'Number of Patents', 'Patents Categories': 'Patent_Category'},
