@@ -122,6 +122,15 @@ st.markdown("""
         }
     </style>
 """, unsafe_allow_html=True)
+# Patents expiring soon
+df['patent_expiration_date']=pd.to_datetime(df['patent_expiration_date'])
+
+
+st.write('Patents Expiring in 2024:')
+
+df_exp = df[(df['status'] == 'Issued') & (df['patent_expiration_date'].dt.year == 2024)]
+
+st.write(df_exp)
 
 df_catt = pd.read_csv('output4.csv') 
     
