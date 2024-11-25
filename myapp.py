@@ -101,8 +101,8 @@ with col3:
     margin=dict(l=20, r=20, t=30, b=20),
     font=dict(size=30),
      yaxis=dict(
-        title=dict(font=dict(size=18)),  # Font size for the y-axis title
-        tickfont=dict(size=18)           # Font size for y-axis tick labels
+        title=dict(font=dict(size=15)),  # Font size for the y-axis title
+        tickfont=dict(size=15)           # Font size for y-axis tick labels
     ),
      xaxis=dict(
         title=dict(font=dict(size=18)),  # Font size for the y-axis title
