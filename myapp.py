@@ -146,6 +146,17 @@ st.dataframe(small_df)
 
 
 
+
+
+
+ 
+ 
+
+# Data filtering by status
+status_options = df['status'].unique()
+selected_status = st.selectbox('Filter by Patent Status:', status_options)
+filtered_data = df[df['status'] == selected_status]
+st.write(filtered_data)
 # Show raw data
 if st.checkbox('Show Patents data'):
       st.write("")
@@ -155,16 +166,6 @@ if st.checkbox('Show Summary Statistics'):
       st.subheader('Summary Statistics')
       st.write(df.describe())
      
-
-# Summary statistics
- 
- 
-
-# Data filtering by status
-status_options = df['status'].unique()
-selected_status = st.selectbox('Filter by Patent Status:', status_options)
-filtered_data = df[df['status'] == selected_status]
-st.write(filtered_data)
 
 
 
