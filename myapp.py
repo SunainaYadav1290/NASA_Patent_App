@@ -78,7 +78,8 @@ with col2:
         font=dict(size=25, color='Coral')) ,
     height=360,  
     width=600, 
-    margin=dict(l=20, r=25, t=30, b=20),
+    legend=dict( font=dict(size=18)),
+    margin=dict(l=20, r=20, t=30, b=20),
     font=dict(size=22)
      )
     st.plotly_chart(fig1)
