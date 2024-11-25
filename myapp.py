@@ -143,7 +143,7 @@ small_df=filtered_dat.head(5)
     
     # Display the table
 st.table(small_df.style.hide(axis='index'))
-#st.dataframe(small_df)
+st.dataframe(small_df)
 
 
 
