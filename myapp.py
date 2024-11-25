@@ -76,7 +76,7 @@ with col2:
     fig1.update_layout(title=dict(
         text='Patents Status',  # Title text
         font=dict(size=25, color='Coral')) ,
-    height=360,  
+    height=400,  
     width=600, 
     legend=dict( font=dict(size=18)),
     margin=dict(l=20, r=20, t=30, b=20),
