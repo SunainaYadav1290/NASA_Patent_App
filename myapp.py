@@ -34,7 +34,7 @@ data1=pd.read_csv(r"mydata.csv")
 df1=pd.DataFrame(data1)
 df1 = df1.sort_values(by='Issued_Patents', ascending=True)
 
-col1,col2,col3 = st.columns([0.3,0.3,0.3])
+col1,col2,col3 = st.columns([0.3.5,0.2,0.4])
 
 with col1:
  with st.container(height=400,border=True):
