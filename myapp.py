@@ -77,7 +77,7 @@ with col2:
         text='Patents Status',  # Title text
         font=dict(size=25, color='Coral')) ,
     height=360,  
-    width=600, 
+    width=500, 
     legend=dict( font=dict(size=18)),
     margin=dict(l=20, r=20, t=30, b=20),
     font=dict(size=22)
