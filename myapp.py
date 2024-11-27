@@ -39,28 +39,45 @@ col1,col2,col3 = st.columns([0.35,0.3,0.35])
 with col1:
   with st.container(height=400,border=True):
   
-    fig1 = px.bar(df1, x='Issued_Patents', y='center',
-             labels={'center': 'Center', 'Issued_Patents': 'Number of Patents Issued'},
-             color_discrete_sequence=["Coral"])
-# Display the chart in Streamlit
-    fig1.update_layout(title=dict(
-        text='Total Patents Issued by each Center',  # Title text
-        font=dict(size=25, color='Coral')  # Set font size and color
+    fig1 = go.Figure(data=[
+    go.Bar(
+        x=data['Issued_Patents'],
+        y=data['center'],
+        orientation='h',  # Horizontal bars
+        width=0.4,  # Set bar width
+        marker=dict(color='Coral')
+    )
+])
+
+# Update layout
+   fig1.update_layout(
+    title=dict(
+        text='Total Patents Issued by each Center',  
+        font=dict(size=25, color='Coral')  
     ),
-    height=360,  
-    width=500, 
+    height=360,
+    width=500,
     margin=dict(l=20, r=20, t=30, b=20),
     font=dict(size=25),
-     yaxis=dict(
+    yaxis=dict(
         title=dict(font=dict(size=18)),  
         tickfont=dict(size=18)           
     ),
-     xaxis=dict(
-        title=dict(font=dict(size=18)), 
-        tickfont=dict(size=18)          
-    )bargap=0.3 
-) 
-    st.plotly_chart(fig1, use_container_width=True)
+    xaxis=dict(
+        title=dict(font=dict(size=18)),  
+        tickfont=dict(size=18)           
+    )
+)
+
+# Display the chart in Streamlit
+   st.plotly_chart(fig1, use_container_width=True)
+
+
+
+
+
+
+
 with col2:
   df_status = pd.read_csv('output1.csv')  
   with st.container(height=500,border=True):
