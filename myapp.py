@@ -43,7 +43,12 @@ with col1:
              labels={'center': 'Center', 'Issued_Patents': 'Number of Patents Issued'},
              color_discrete_sequence=["Coral"])
 # Display the chart in Streamlit
-  
+  fig.update_layout(title=dict(
+        text='Total Patents Issued by each Center',  # Title text
+        font=dict(size=25, color='Coral')  # Set font size and color
+    ),
+    height=460,  
+    width=500)
   st.plotly_chart(fig, use_container_width=True)
 with col2:
   df_status = pd.read_csv('output1.csv')  
