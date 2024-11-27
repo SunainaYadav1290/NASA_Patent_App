@@ -70,7 +70,7 @@ with col1:
 with col2:
   df_status = pd.read_csv('output1.csv')  
   with st.container(height=500,border=True):
-    fig1 = px.pie(df_status,
+    fig2 = px.pie(df_status,
     names='status',  
     values='count',   
     title='Patents Status', 
@@ -78,7 +78,7 @@ with col2:
 )
 
 # Display the pie chart in Streamlit
-    fig1.update_layout(title=dict(
+    fig2.update_layout(title=dict(
         text='Patents Status',  # Title text
         font=dict(size=25, color='Coral')) ,
     height=460,  
@@ -87,7 +87,7 @@ with col2:
     margin=dict(l=20, r=20, t=30, b=20),
     font=dict(size=22)
      )
-    st.plotly_chart(fig1)
+    st.plotly_chart(fig2)
 
 with col3:
  df_cat = pd.read_csv('output2.csv') 
