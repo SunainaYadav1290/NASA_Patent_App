@@ -37,13 +37,13 @@ df1 = df1.sort_values(by='Issued_Patents', ascending=True)
 col1,col2,col3 = st.columns([0.35,0.3,0.35])
 
 with col1:
- with st.container(height=400,border=True):
+  with st.container(height=400,border=True):
   
-   fig1 = px.bar(df1, x='Issued_Patents', y='center',
+    fig1 = px.bar(df1, x='Issued_Patents', y='center',
              labels={'center': 'Center', 'Issued_Patents': 'Number of Patents Issued'},
              color_discrete_sequence=["Coral"])
 # Display the chart in Streamlit
-   fig1.update_layout(title=dict(
+    fig1.update_layout(title=dict(
         text='Total Patents Issued by each Center',  # Title text
         font=dict(size=25, color='Coral')  # Set font size and color
     ),
@@ -60,7 +60,7 @@ with col1:
         tickfont=dict(size=18)          
     )
 ) 
-   st.plotly_chart(fig1, use_container_width=True)
+    st.plotly_chart(fig1, use_container_width=True)
 with col2:
   df_status = pd.read_csv('output1.csv')  
   with st.container(height=400,border=True):
