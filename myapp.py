@@ -172,9 +172,7 @@ if st.checkbox('Show Patents data'):
       st.write("")
       st.write("")
       st.write(df)
-if st.checkbox('Show Summary Statistics'):
-      st.subheader('Summary Statistics')
-      st.write(df.describe())
+
      
 
 
