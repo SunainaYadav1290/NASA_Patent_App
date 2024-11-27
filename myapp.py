@@ -133,14 +133,13 @@ if input_id:
         st.write("Patent Expiration Date:", expiration_date)
     else:
         st.write("Patent ID not found.")
+st.write("")
+if st.button("Check Patents Expiring in 2024"):
 
-st.write('Patents Expiring in 2024:')
+   df_exp = df[(df['status'] == 'Issued') & (df['patent_expiration_date'].dt.year == 2024)]
 
-df_exp = df[(df['status'] == 'Issued') & (df['patent_expiration_date'].dt.year == 2024)]
-
-df_html = df_exp.to_html(index=False)
-#st.write(df_html, unsafe_allow_html=True)
-
+   df_html = df_exp.to_html(index=False)
+   st.write(df_html, unsafe_allow_html=True)
 df_catt = pd.read_csv('output4.csv') 
     
      
