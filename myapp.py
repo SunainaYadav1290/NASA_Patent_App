@@ -5,6 +5,7 @@ import requests
 import plotly.express as px
 import datetime
 import plotly.graph_objects as go
+
 st.set_page_config(layout="wide")
 def fetch_nasa_data(api_endpoint):
     try:
@@ -37,40 +38,28 @@ df1 = df1.sort_values(by='Issued_Patents', ascending=True)
 col1,col2,col3 = st.columns([0.35,0.3,0.35])
 
 with col1:
-  with st.container(height=400,border=True):
+  with st.container():
   
-    fig1 = go.Figure(data=[
-    go.Bar(
-        x=data['Issued_Patents'],
-        y=data['center'],
-        orientation='h',  # Horizontal bars
-        width=0.2,  # Set bar width
-        marker=dict(color='Coral')
-    )
-])
-
-# Update layout
-   fig1.update_layout(
-    title=dict(
-        text='Total Patents Issued by each Center',  
-        font=dict(size=25, color='Coral')  
-    ),
-    height=360,
-    width=500,
-    margin=dict(l=20, r=20, t=30, b=20),
-    font=dict(size=25),
-    yaxis=dict(
-        title=dict(font=dict(size=18)),  
-        tickfont=dict(size=18)           
-    ),
-    xaxis=dict(
-        title=dict(font=dict(size=18)),  
-        tickfont=dict(size=18)           
-    )
-)
-
-# Display the chart in Streamlit
-   st.plotly_chart(fig1, use_container_width=True)
+    
+        fig1 = go.Figure(data=[
+            go.Bar(
+                x=df['Issued_Patents'],
+                y=df['center'],
+                orientation='h',
+                marker=dict(color='Coral')
+            )
+        ])
+        fig1.update_layout(
+            title='Total Patents Issued by Each Center',
+            title_font=dict(size=25, color='Coral'),
+            height=360, width=500,
+            margin=dict(l=20, r=20, t=30, b=20),
+            font=dict(size=25),
+            bargap=0.2,
+            xaxis=dict(title='Number of Patents', tickfont=dict(size=18)),
+            yaxis=dict(title='Center', tickfont=dict(size=18))
+        )
+        st.plotly_chart(fig1, use_container_width=True)
 
 
 
