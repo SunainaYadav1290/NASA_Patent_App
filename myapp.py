@@ -37,7 +37,7 @@ df1 = df1.sort_values(by='Issued_Patents', ascending=True)
 col1,col2,col3 = st.columns([0.35,0.3,0.35])
 
 with col1:
-  with st.container(height=500,border=True):
+  with st.container(height=400,border=True):
   
     fig1 = px.bar(df1, x='Issued_Patents', y='center',
              labels={'center': 'Center', 'Issued_Patents': 'Number of Patents Issued'},
@@ -47,7 +47,7 @@ with col1:
         text='Total Patents Issued by each Center',  # Title text
         font=dict(size=25, color='Coral')  # Set font size and color
     ),
-    height=460,  
+    height=360,  
     width=500, 
     margin=dict(l=20, r=20, t=30, b=20),
     font=dict(size=25),
