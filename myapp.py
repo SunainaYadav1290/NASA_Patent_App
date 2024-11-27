@@ -4,7 +4,7 @@ import pandas as pd
 import requests
 import plotly.express as px
 import datetime
-
+import plotly.graph_objects as go
 st.set_page_config(layout="wide")
 def fetch_nasa_data(api_endpoint):
     try:
