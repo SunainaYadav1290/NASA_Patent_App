@@ -52,7 +52,7 @@ with col1:
         fig1.update_layout(
             title='Total Patents Issued by Each Center',
             title_font=dict(size=25, color='Coral'),
-            height=360, width=500,
+            height=460, width=500,
             margin=dict(l=20, r=20, t=30, b=20),
             font=dict(size=25),
             bargap=0.2,
