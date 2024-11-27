@@ -58,7 +58,7 @@ with col1:
      xaxis=dict(
         title=dict(font=dict(size=18)), 
         tickfont=dict(size=18)          
-    )
+    )bargap=0.3 
 ) 
     st.plotly_chart(fig1, use_container_width=True)
 with col2:
