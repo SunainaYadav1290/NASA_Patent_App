@@ -63,7 +63,7 @@ with col1:
     st.plotly_chart(fig1, use_container_width=True)
 with col2:
   df_status = pd.read_csv('output1.csv')  
-  with st.container(height=400,border=True):
+  with st.container(height=500,border=True):
     fig1 = px.pie(df_status,
     names='status',  
     values='count',   
@@ -75,7 +75,7 @@ with col2:
     fig1.update_layout(title=dict(
         text='Patents Status',  # Title text
         font=dict(size=25, color='Coral')) ,
-    height=360,  
+    height=460,  
     width=500, 
     legend=dict( font=dict(size=18)),
     margin=dict(l=20, r=20, t=30, b=20),
@@ -86,7 +86,7 @@ with col2:
 with col3:
  df_cat = pd.read_csv('output2.csv') 
  df_cat = df_cat.sort_values(by='count', ascending=True)
- with st.container(height=400,border=True):
+ with st.container(height=500,border=True):
   
   fig3 = px.line(df_cat, x='count', y='Patent_Category',
              labels={'count': 'Number of Patents', 'Patents Categories': 'Patent_Category'},
@@ -96,7 +96,7 @@ with col3:
   fig3.update_layout(title=dict(
         text='Total Patents by Category',  # Title text
         font=dict(size=25, color='Coral')) ,
-    height=370,  
+    height=460,  
     width=500, 
     margin=dict(l=20, r=20, t=30, b=20),
     font=dict(size=30),
