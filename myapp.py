@@ -60,7 +60,7 @@ with col1:
         tickfont=dict(size=18)          
     )
 ) 
-st.plotly_chart(fig, use_container_width=True)
+  st.plotly_chart(fig, use_container_width=True)
 with col2:
   df_status = pd.read_csv('output1.csv')  
   with st.container(height=400,border=True):
