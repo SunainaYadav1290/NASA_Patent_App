@@ -54,10 +54,10 @@ with col1:
             title_font=dict(size=25, color='Coral'),
             height=460, width=500,
             margin=dict(l=20, r=20, t=30, b=20),
-            font=dict(size=25),
+            font=dict(size=20),
             bargap=0.2,
-            xaxis=dict(title='Number of Patents', tickfont=dict(size=18)),
-            yaxis=dict(title='Center', tickfont=dict(size=18))
+            xaxis=dict(title='Number of Patents', tickfont=dict(size=15)),
+            yaxis=dict(title='Center', tickfont=dict(size=15))
         )
         st.plotly_chart(fig1, use_container_width=True)
 
