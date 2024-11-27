@@ -51,10 +51,10 @@ with col1:
         ])
         fig1.update_layout(
             title='Total Patents Issued by Each Center',
-            title_font=dict(size=25, color='Coral'),
+            title_font=dict(size=20, color='Coral'),
             height=460, width=500,
             margin=dict(l=20, r=20, t=30, b=20),
-            font=dict(size=20),
+            font=dict(size=15),
             bargap=0.2,
             xaxis=dict(title='Number of Patents', tickfont=dict(size=15)),
             yaxis=dict(title='Center', tickfont=dict(size=15))
