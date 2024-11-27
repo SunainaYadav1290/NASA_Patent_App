@@ -44,7 +44,7 @@ with col1:
         x=data['Issued_Patents'],
         y=data['center'],
         orientation='h',  # Horizontal bars
-        width=0.4,  # Set bar width
+        width=0.2,  # Set bar width
         marker=dict(color='Coral')
     )
 ])
