@@ -126,7 +126,13 @@ st.markdown("""
 """, unsafe_allow_html=True)
 # Patents expiring soon
 df['patent_expiration_date']=pd.to_datetime(df['patent_expiration_date'])
-
+input_id = st.text_input("Enter a Patent ID to Check its expiry:")
+if input_id:
+    if input_id in df['case_number'].values:
+        expiration_date = df.loc[df['case_number'] == input_id, 'patent_expiration_date'].iloc[0]
+        st.write("Patent Expiration Date:", expiration_date)
+    else:
+        st.write("Patent ID not found.")
 
 st.write('Patents Expiring in 2024:')
 
