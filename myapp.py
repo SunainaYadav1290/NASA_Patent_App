@@ -51,7 +51,7 @@ with col1:
         font=dict(size=25, color='Coral')) ,
     height=460,  
     width=500, 
-    margin=dict(l=20, r=20, t=35, b=10),
+    margin=dict(l=20, r=20, t=35, b=5),
     font=dict(size=30),
      yaxis=dict(
         title=dict(font=dict(size=13)),  # Font size for the y-axis title
@@ -87,7 +87,7 @@ with col2:
     height=460,  
     width=500, 
     legend=dict( font=dict(size=18)),
-    margin=dict(l=20, r=20, t=35, b=20),
+    margin=dict(l=20, r=20, t=35, b=5),
     font=dict(size=22)
      )
     st.plotly_chart(fig2)
