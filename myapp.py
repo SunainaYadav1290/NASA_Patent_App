@@ -41,25 +41,27 @@ with col1:
   with st.container():
   
     
-        fig1 = go.Figure(data=[
-            go.Bar(
-                x=df['Issued_Patents'],
-                y=df['center'],
-                orientation='h',
-                marker=dict(color='Coral')
-            )
-        ])
-        fig1.update_layout(
-            title='Total Patents Issued by Each Center',
-            title_font=dict(size=20, color='Coral'),
-            height=460, width=500,
-            margin=dict(l=20, r=20, t=30, b=20),
-            font=dict(size=15),
-            bargap=0.2,
-            xaxis=dict(title='Number of Patents', tickfont=dict(size=15)),
-            yaxis=dict(title='Center', tickfont=dict(size=15))
-        )
-        st.plotly_chart(fig1, use_container_width=True)
+         fig1 = px.bar(df1, x='Issued_Patents', y='center',
+             labels={'Issued_Patents': 'Patents Issued', 'center': 'centers'},
+             color_discrete_sequence=["Coral"])
+# Display the chart in Streamlit
+
+        fig1.update_layout(title=dict(
+        text='Total Patents Issued by Center',  # Title text
+        font=dict(size=25, color='Coral')) ,
+    height=460,  
+    width=500, 
+    margin=dict(l=20, r=20, t=30, b=20),
+    font=dict(size=30),
+     yaxis=dict(
+        title=dict(font=dict(size=13)),  # Font size for the y-axis title
+        tickfont=dict(size=13)           # Font size for y-axis tick labels
+    ),
+     xaxis=dict(
+        title=dict(font=dict(size=18)),  # Font size for the y-axis title
+        tickfont=dict(size=18)           # Font size for y-axis tick labels
+    )
+)       st.plotly_chart(fig1, use_container_width=True)
 
 
 
