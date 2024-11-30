@@ -38,7 +38,7 @@ df1 = df1.sort_values(by='Issued_Patents', ascending=True)
 col1,col2,col3 = st.columns([0.35,0.3,0.35])
 
 with col1:
-  with st.container():
+  with st.container(height=500,border=True):
   
     
          fig1 = px.bar(df1, x='Issued_Patents', y='center',
