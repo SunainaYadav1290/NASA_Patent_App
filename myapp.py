@@ -46,7 +46,7 @@ with col1:
              color_discrete_sequence=["Coral"])
 # Display the chart in Streamlit
 
-        fig1.update_layout(title=dict(
+         fig1.update_layout(title=dict(
         text='Total Patents Issued by Center',  # Title text
         font=dict(size=25, color='Coral')) ,
     height=460,  
