@@ -61,7 +61,8 @@ with col1:
         title=dict(font=dict(size=18)),  # Font size for the y-axis title
         tickfont=dict(size=18)           # Font size for y-axis tick labels
     )
-)        st.plotly_chart(fig1, use_container_width=True)
+)   
+         st.plotly_chart(fig1, use_container_width=True)
 
 
 
